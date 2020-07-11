@@ -12,4 +12,7 @@ let re = /world/gi;
 // console.log(str.match(re));
 // [ 'World' ]
 
-console.log(str.replace(re, (str) => 'XXX'));
+// console.log(str.replace(re, (str) => 'XXX'));
+
+str = 'helooooooooo';
+console.log(str.match(/o{3,6}/));
