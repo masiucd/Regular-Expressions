@@ -30,8 +30,8 @@ pre {
 
 span {
   background: #333;
-  border: 1px solid #eee;
-  box-shadow: 2px 3px #333;
+
+  box-shadow: 2px 3px 2px #333;
   color: #ffffff;
   padding: .1rem;
 }

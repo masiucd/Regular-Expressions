@@ -115,3 +115,53 @@ To make a optional match. 🍌
   str.match(/o?/g)
   // Will give us the same result
 ```
+
+How we could match a simple URL path 🦕
+
+``` js
+string = `
+https://marcellable.com
+
+http://marcellable.com
+
+WILL NOT BE MATCHED
+http://
+
+https://www.marcellable.com
+`;
+
+regex = /https?:\/\/.+/g;
+```
+
+First we match either https or http , we the escape those forward slashes and put a wild card as the . operator, finally we match the rest and put the global flag.
+All will be match except the **http://** 🤪
+
+### Characters classes
+
+Characters classes will help us to group our matches , we use [char] to group our character class, followed up with res of the patterns.
+
+Order is not important!
+
+``` js
+  let string = 'cat mat bat Hat ?at 9at.';
+  regex = /[cb]at/g; // either match c-at or b-at
+  // cat , mat
+```
+
+We can also negate the char class and not match those characters.
+This will not match Cat ore Mat ! 🎱
+
+``` js
+let string = 'cat mat bat Hat ?at 9at.';
+regex = /[^cb]at/g; // will not match cat ore mat !
+```
+
+We can also match ranges, digits , letters , both lowercase and capital.
+
+``` js
+let string = 'cat mat bat Hat ?at 9at.';
+let regex = /[a-z]/g // all lowercase letters from a to z
+regex = /[A-Z]/g // all uppercase letters from A to Z
+regex = /[a-zA-Z]/g // all uppercase and lowercase letters from A to Z a to z
+regex = /[0-9]/g // all digits from 0 - 9
+```
