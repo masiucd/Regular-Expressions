@@ -1,6 +1,6 @@
 # Regular expression with Javascript ⚛️🚀🤙🏻🦋
 
-### Working with strings
+## Working with strings
 
 This is just a simple example on how you can match simple string with javascript. Both with the Contructor Method or with *2* forward slashes (/*value to match*/)
 
@@ -24,4 +24,27 @@ This will match World even if our regex is all lowercase just because of the I f
   let str = 'Hello World';
 
   let re = /world/gi;
+  console.log(re.exec(str));
+```
+
+We can also match our string to our Regular expression 💪🏻
+wish will give us a array with all matches in our string.
+
+``` js
+  let str = 'Hello World';
+
+  let re = /world/gi;
+  str.match(re)
+  /* [ 'World' ] */
+```
+
+Also a common method to work with is the *replace method*
+
+``` js
+let str = 'Hello World';
+
+let re = /world/gi;
+
+console.log(str.replace(re, (str) => 'XXX'));
+/* Hello XXX */
 ```
