@@ -41,4 +41,8 @@ regex = /[a-z]/g;
 regex = /[a-zA-Z]/g;
 regex = /[0-9?]at\./g;
 
+string = 'Hello world!!! How Are you ?';
+regex = /\w/g;
+regex = /\W/g;
+
 output(string, regex, preElement);

@@ -165,3 +165,16 @@ regex = /[A-Z]/g // all uppercase letters from A to Z
 regex = /[a-zA-Z]/g // all uppercase and lowercase letters from A to Z a to z
 regex = /[0-9]/g // all digits from 0 - 9
 ```
+
+A short cut for using character classes with both lowercase and uppercase letters [a-zA-Z] is to use \w.
+**\w** will match all letters , if using **\W** then it is the opposite, all non letters and empty space.
+if you inly  to match digits then **\d** , the negate to **\d** is **\D**, same goes for white space with **\s** and **\S**
+
+``` js
+let string = 'Hello world!!! How Are you ?'
+let regex = /\w/g;
+/*'Hello world How Are you   */
+
+regex = /\w/g;
+/* !!! ? */
+```
