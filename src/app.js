@@ -68,6 +68,32 @@ string = `
 
 regex = /\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}/g;
 
+string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+`;
+
+regex = /foo(?=bar|baz)/g;
+regex = /foo(?!bar|baz)/g;
+
+string = `
+  031 52-98-31
+  031529831
+  (031) 52-98-31
+`;
+
+regex = /\(?(\d{3})\)?[\s-]?\d{2}[\s-]?\d{2}[\s-]?\d{2}/g;
+
+string = `This island is his, it is!`;
+string = `This is my favorite dish and yes I love it so much, it is my favorite dish`;
+
+regex = /\bis/g;
+
+regex = /\bis\b/g;
+regex = /is\b/g;
+
 output(string, regex, preElement);
 
-console.log(string.replace(regex, 'area code $1'));
+// console.log(string.replace(regex, 'area code $1'));

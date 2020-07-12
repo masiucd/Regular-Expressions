@@ -221,6 +221,36 @@ regex = /foo(bar|baz)/g
 // foobar and foobaz
 ```
 
+We can also match only foo the ends with *bar* ore *baz* like this.
+
+``` js
+  let string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+
+`
+
+  regex = /foo(?=bar|baz)/g
+  // foo and foo
+```
+
+We can also negate it with *(?!bar|baz)*.
+This will match that not has *bar* or *baz*.
+
+``` js
+  let string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+
+`
+
+  regex = /foo(?!bar|baz)/g
+```
+
 Let's match some phone numbers 😎
 
 ``` js
@@ -248,3 +278,24 @@ console.log(string.replace(regex, 'area code $1'));
 The regex wrap the first 3 digits in a group and then escape those parentheses, we also make them optional because we have 3 different patterns to match.
 Then we watch either a empty space or a dash and also make it optional, **(2 times)**.
 finally we match our last pattern with 4 digits. λ🚀🌸.
+
+<br />
+<hr />
+
+### Word Boundaries
+
+Word Boundaries Are very useful when we want to match a specific pattern in out string. *This is my favorite dish and yes I love it so much, it is my favorite dish*
+we want to match is but not all **is** patterns at once.
+
+``` js
+  let string = `This is my favorite dish and yes I love it so much, it is my favorite dish`
+  let regex = /is/g;
+  // match all is
+
+  regex = /\bis/g; // starts with is
+
+  regex = /\bis\b/g; // only is
+  // we got 2 is
+  regex = /is\b/g; // end's with is
+  // we got 3 is
+```
