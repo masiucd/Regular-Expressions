@@ -168,7 +168,7 @@ regex = /[0-9]/g // all digits from 0 - 9
 
 A short cut for using character classes with both lowercase and uppercase letters [a-zA-Z] is to use \w.
 **\w** will match all letters , if using **\W** then it is the opposite, all non letters and empty space.
-if you inly  to match digits then **\d** , the negate to **\d** is **\D**, same goes for white space with **\s** and **\S**
+if you only  to match digits then **\d** , the negate to **\d** is **\D**, same goes for white space with **\s** and **\S**.
 
 ``` js
 let string = 'Hello world!!! How Are you ?'
@@ -178,3 +178,73 @@ let regex = /\w/g;
 regex = /\w/g;
 /* !!! ? */
 ```
+
+<br />
+<hr />
+
+### Capture groups
+
+We can also group our regular expressions in so called *Capture groups* 🥨.
+To match a given pattern in a string.
+For example.
+
+``` js
+let string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+
+`
+
+let regex = /foo/g
+// will match foo
+
+regex = /foo(bar)/g
+// foobar
+```
+
+We grouped our pattern to match **just** foobar! 🎸
+
+We can also make optional patterns with the pipe operator (|).
+
+``` js
+let string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+
+`
+
+regex = /foo(bar|baz)/g
+// foobar and foobaz
+```
+
+Let's match some phone numbers 😎
+
+``` js
+let string = `
+  800-000-7621
+
+  (555) 456-2120
+
+  0987620278
+`;
+
+let regex = /\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}/g;
+
+console.log(string.replace(regex, 'area code $1'));
+/*
+
+  area code 800
+
+  area code 555
+
+  area code 098
+*/
+```
+
+The regex wrap the first 3 digits in a group and then escape those parentheses, we also make them optional because we have 3 different patterns to match.
+Then we watch either a empty space or a dash and also make it optional, **(2 times)**.
+finally we match our last pattern with 4 digits. λ🚀🌸.

@@ -44,5 +44,30 @@ regex = /[0-9?]at\./g;
 string = 'Hello world!!! How Are you ?';
 regex = /\w/g;
 regex = /\W/g;
+string = '031-gbg';
+regex = /\d{0,3}\S-/g;
+
+string = `
+  foo
+  foobar
+  foobaz
+  fooobooo
+`;
+
+regex = /foo/g;
+regex = /foo(bar)/g;
+regex = /foo(bar|baz)/g;
+
+string = `
+  800-000-7621
+
+  (555) 456-2120
+
+  0987620278
+`;
+
+regex = /\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}/g;
 
 output(string, regex, preElement);
+
+console.log(string.replace(regex, 'area code $1'));
