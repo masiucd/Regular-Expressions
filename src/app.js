@@ -94,6 +94,24 @@ regex = /\bis/g;
 regex = /\bis\b/g;
 regex = /is\b/g;
 
+string = 'It was the the thing';
+regex = /(the)\s?\1/g;
+regex = /(the)\s?(?=\1)/g;
+
+string = `<h1>Hello</h1>`;
+
+// regex = /<(\w+|\d+)>/g;
+// console.log(string.match(regex));
+
+string = `
+  12/04/21
+  12-04-21
+  10-12-08
+  12-12-2009
+`;
+
+regex = /12[-?/?]\d{2}[-?/?]\d{2}[\d]?[\d]?/gm;
+
 output(string, regex, preElement);
 
 // console.log(string.replace(regex, 'area code $1'));
