@@ -112,6 +112,16 @@ string = `
 
 regex = /12[-?/?]\d{2}[-?/?]\d{2}[\d]?[\d]?/gm;
 
+string = `ciszekmarcell@gmail.com
+  masiuboy@msn.com
+  marcellciszek@dev.com
+  123test@dev.com
+`;
+
+// regex = /^[\w].(gmail|msn|dev)/gi;
+
+regex = /^[\w\n\s]+.(gmail|msn|dev)\.com$/gm;
+
 output(string, regex, preElement);
 
 // console.log(string.replace(regex, 'area code $1'));
