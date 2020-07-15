@@ -118,9 +118,22 @@ string = `ciszekmarcell@gmail.com
   123test@dev.com
 `;
 
-// regex = /^[\w].(gmail|msn|dev)/gi;
-
 regex = /^[\w\n\s]+.(gmail|msn|dev)\.com$/gm;
+
+string = `031 52-98-31 (031)52-98-31 (031)52 98 31`;
+
+regex = /\(?(\d{3})\)?[\s-]?\d{2}[\s-]?\d{2}[\s-]\d{2}/g;
+string = 'Legiaaaaa Warszawaaa';
+
+regex = /(a{3})/g;
+
+string = '#instaHash';
+
+regex = /^#[a-z]+$/gi;
+
+string = 'https://marcell.com  http://marcell.se';
+
+regex = /(https?:\/\/[a-z]+\.(se|com))/g;
 
 output(string, regex, preElement);
 
