@@ -7,7 +7,7 @@
 
 This is just a simple example on how you can match simple string with javascript. Both with the Constructor Method or with _2_ forward slashes (/_value to match_/)
 
-```javascript
+``` javascript
 let str = 'Hello World';
 
 let reg = new RegExp(str);
@@ -23,7 +23,7 @@ You can also add flags to your regular expression. Most common used is g wish st
 
 This will match World even if our regex is all lowercase just because of the I flag
 
-```javascript
+``` javascript
 let str = 'Hello World';
 
 let re = /world/gi;
@@ -33,7 +33,7 @@ console.log(re.exec(str));
 We can also match our string to our Regular expression 💪🏻
 wish will give us a array with all matches in our string.
 
-```js
+``` js
 let str = 'Hello World';
 
 let re = /world/gi;
@@ -43,7 +43,7 @@ str.match(re);
 
 Also a common method to work with is the _replace method_
 
-```js
+``` js
 let str = 'Hello World';
 
 let re = /world/gi;
@@ -54,7 +54,7 @@ console.log(str.replace(re, (str) => 'XXX'));
 
 Another handful string match pattern is to us the **.** wish will match letter digit or dash, any character that comes before the pattern itself. I will not match a line break.
 
-```js
+``` js
 let string = 'Cat Sat On A Hat.';
 regex = /.at/gi;
 // Cat Sat Hat
@@ -64,7 +64,7 @@ will match Cat Sat Hat, make notice it will match all this because we added the 
 
 We can also escape characters with a backslash just before
 
-```js
+``` js
 let string = 'Cat Sat On A Hat.';
 regex = /\./g;
 // .
@@ -72,7 +72,7 @@ regex = /\./g;
 
 Sometimes we want to match a repeated pattern with
 
-```js
+``` js
 let str = 'Heloooooooo.';
 let re = /o{3}/g;
 ```
@@ -81,7 +81,7 @@ This will match **o** = ooo 🔁
 
 We could also give it a range and match from 3 to 5 **o's**. (At least 3 and max 5)
 
-```js
+``` js
 let str = 'helooooooooo';
 str.match(/o{3,5}/g);
 // ooooo
@@ -89,7 +89,7 @@ str.match(/o{3,5}/g);
 
 At least 3 and rest can be infinity. 🤠
 
-```js
+``` js
 let str = 'helooooooooo';
 str.match(/o{3,}/g);
 // ooooo
@@ -97,7 +97,7 @@ str.match(/o{3,}/g);
 
 To make it to a infinity match there is a short cut with + operator
 
-```js
+``` js
 let str = 'helooooooooollloooo';
 str.match(/o+/g); // ooooooooo
 // Will match all o that comes in a row
@@ -111,7 +111,7 @@ str.match(/{1,}/g); // ooooooooo oooo
 
 To make a optional match. 🍌
 
-```js
+``` js
 let str = 'helloooooooo';
 str.match(/o{0,1}/g);
 // Or we can write with a shortcut operator
@@ -121,7 +121,7 @@ str.match(/o?/g);
 
 How we could match a simple URL path 🦕
 
-```js
+``` js
 string = `
 https://marcellable.com
 
@@ -148,7 +148,7 @@ Characters classes will help us to group our matches , we use [char] to group ou
 
 Order is not important!
 
-```js
+``` js
 let string = 'cat mat bat Hat ?at 9at.';
 regex = /[cb]at/g; // either match c-at or b-at
 // cat , mat
@@ -157,14 +157,14 @@ regex = /[cb]at/g; // either match c-at or b-at
 We can also negate the char class and not match those characters.
 This will not match Cat ore Mat ! 🎱
 
-```js
+``` js
 let string = 'cat mat bat Hat ?at 9at.';
 regex = /[^cb]at/g; // will not match cat ore mat !
 ```
 
 We can also match ranges, digits , letters , both lowercase and capital.
 
-```js
+``` js
 let string = 'cat mat bat Hat ?at 9at.';
 let regex = /[a-z]/g; // all lowercase letters from a to z
 regex = /[A-Z]/g; // all uppercase letters from A to Z
@@ -176,7 +176,7 @@ A short cut for using character classes with both lowercase and uppercase letter
 **\w** will match all letters , if using **\W** then it is the opposite, all non letters and empty space.
 if you only to match digits then **\d** , the negate to **\d** is **\D**, same goes for white space with **\s** and **\S**.
 
-```js
+``` js
 let string = 'Hello world!!! How Are you ?';
 let regex = /\w/g;
 /*'Hello world How Are you   */
@@ -194,7 +194,7 @@ We can also group our regular expressions in so called _Capture groups_ 🥨.
 To match a given pattern in a string.
 For example.
 
-```js
+``` js
 let string = `
   foo
   foobar
@@ -214,7 +214,7 @@ We grouped our pattern to match **just** foobar! 🎸
 
 We can also make optional patterns with the pipe operator (|).
 
-```js
+``` js
 let string = `
   foo
   foobar
@@ -229,7 +229,7 @@ regex = /foo(bar|baz)/g;
 
 We can also match only foo the ends with _bar_ ore _baz_ like this.
 
-```js
+``` js
 let string = `
   foo
   foobar
@@ -245,7 +245,7 @@ regex = /foo(?=bar|baz)/g;
 We can also negate it with _(?!bar|baz)_.
 This will match that not has _bar_ or _baz_.
 
-```js
+``` js
 let string = `
   foo
   foobar
@@ -259,7 +259,7 @@ regex = /foo(?!bar|baz)/g;
 
 Let's match some phone numbers 😎
 
-```js
+``` js
 let string = `
   800-000-7621
 
@@ -293,8 +293,8 @@ finally we match our last pattern with 4 digits. λ🚀🌸.
 Word Boundaries Are very useful when we want to match a specific pattern in out string. _This is my favorite dish and yes I love it so much, it is my favorite dish_
 we want to match is but not all **is** patterns at once.
 
-```js
-let string = `This is my favorite dish and yes I love it so much, it is my favorite dish`;
+``` js
+let string = `This is my favorite dish and yes I love it so much, it is my favorite dish` ;
 let regex = /is/g;
 // match all is
 
@@ -313,7 +313,7 @@ regex = /is\b/g; // end's with is
 
 Back references is a good use when you want find the match 2 ore more times.
 
-```js
+``` js
 let string = 'It was the the thing';
 let regex = /(the)\s?\1/g;
 ```
@@ -321,7 +321,7 @@ let regex = /(the)\s?\1/g;
 What we doing here is that we group (the) and follow up with a optional whitespace, then we index our group. Because we just have one group , the index will be 1.
 To just match the first the we could write our regular expression like this instead.
 
-```js
+``` js
 let string = 'It was the the thing';
 let regex = /(the)\s?(?=\1)/g;
 ```
@@ -335,6 +335,19 @@ Will only match the first _the_.
 
 **Flags**
 
-- i = case sensitive
-- g = global match
-- m = multiline flag
+* i = case sensitive
+* g = global match
+* m = multiline flag
+
+### Char classes 🦄
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| .      | matches any single character except \n  , exp: /.y/ matches "my" and "ay"      |
+| \d   | Text        |
+| \D   | Text        |
+| \w   | Text        |
+| \W   | Text        |
+| \s   | Text        |
+| \S   | Text        |
+| \S   | Text        |
