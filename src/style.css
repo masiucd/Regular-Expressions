@@ -30,7 +30,8 @@ pre {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 970px;
+  /* max-width: 970px; */
+
 }
 
 span {

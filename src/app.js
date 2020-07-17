@@ -135,6 +135,12 @@ string = 'https://marcell.com  http://marcell.se';
 
 regex = /(https?:\/\/[a-z]+\.(se|com))/g;
 
+string = '4222 3212 8761 9092';
+regex = /^42\d{2}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$/g;
+
+string = 'moon';
+regex = /n\b/;
+
 output(string, regex, preElement);
 
 // console.log(string.replace(regex, 'area code $1'));
