@@ -344,10 +344,17 @@ Will only match the first _the_.
 | Syntax      | Description |
 | ----------- | ----------- |
 | .      | matches any single character except \n  , exp: /.y/ matches "my" and "ay"      |
-| \d   | Text        |
-| \D   | Text        |
-| \w   | Text        |
-| \W   | Text        |
-| \s   | Text        |
-| \S   | Text        |
-| \S   | Text        |
+| \d   | all digits        |
+| \D   | all NON digits        |
+| \w   | alphanumeric character from the basic Latin alphabet, including the underscore        |
+| \W   | Matches any character that is not a word character        |
+| \s   | single white space character, including space, tab.        |
+| \S   | Non Whitespace        |
+| \   | Indicates that the following character should be treated specially, or "escaped". It behaves one of two ways.        |
+
+### Assertions ⚽️
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| ^      |  Matches the beginning of input. If the multiline flag is set to true, also matches immediately after a line break character. For example, /^A/ does not match the "A" in "an A", but does match the first "A" in "An A".   |
+| $   | matches end of the input  |
